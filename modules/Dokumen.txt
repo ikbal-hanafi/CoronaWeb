@@ -1,0 +1,80 @@
+---         Covid19 Information Gathering          ---
+------------------------------------------------------
+- Library ini untuk mempermudah pengambilan infor    -
+- tentang virus baru yaitu "Corona" atau biasa       -
+- disebut COVID19, dan library ini saya bagikan      -
+- gratis (sumber terbuka) untuk siapa saja yang ingin-
+- mengembangkan library ini.                         -
+------------------------------------------------------
+
+Fitur library:
+- Mengambil nama negara
+- Mengambil jumlah yang terkonfirmasi
+- Mengambil jumlah yang meninggal
+- Mengambil jumlah yang aktif
+- Mengambil semua data
+- Mencari data sesuai nama negara
+
+Informasi lainnya:
+- Penulis: Billal Fauzan
+- Dari   : api.kawalcorona.com
+- Versi  : 0.1
+- Dibuat : 14 september 2020, 16.17
+- Selesai: 14 september 2020, 18.18
+
+
+Bagaimana cara menggunakan nya?
+- Untuk pertama kali nya, silahkan ambil library ini dari github saya
+- Yang kedua, silahkan import library ini ke dalam kode proyek anda
+    from covid19 import COVID
+- Silahkan pelajari dokumen dibawah!
+
+Bagaimana cara mengambil nama negara?
+- Jika anda sudah import library ini, silahkan masukan kode berikut:
+    covid = modules.Covid()
+    covid.get()
+    negara = covid.country
+    print (negara)
+
+Bagaimana cara mengambil jumlah pasien aktif?
+- Jika anda sudah import library ini, silahkan masukan kode berikut:
+    negara = "Indonesia"
+    covid = modules.Covid()
+    covid.get()
+    aktif = covid.getActive(country=negara)
+    print (aktif)
+
+Bagaimana cara mengambil jumlah pasien meninggal?
+- Jika anda sudah import library ini, silahkan masukan kode berikut:
+    negara = "Indonesia"
+    covid = modules.Covid()
+    covid.get()
+    meninggal = covid.getDeath(country=negara)
+    print (meninggal)
+
+Bagaimana cara mengambil jumlah pasien yang terkonfirmasi?
+- Jika anda sudah import library ini, silahkan masukan kode berikut:
+    negara = "Indonesia"
+    covid = modules.Covid()
+    covid.get()
+    konfirmasi = covid.getConfirmed(country=negara)
+    print (konfirmasi)
+
+Bagaimana cara mencari data?
+- JIka anda sudah import library ini, silahkan masukan kode berikut:
+    negara = "Indo"
+    covid = modules.Covid()
+    covid.get()
+    data = covid.search(country=negara)
+    print (data)
+
+Bagaimana cara mengambil semua data?
+- Jika anda sudah import library ini, silahkan masukan kode berikut:
+    covid = modules.Covid()
+    covid.get()
+    semua = covid.all
+    print (semua)
+
+Note: data akan berbentuk json, jadi mempermudah untuk pengambilan data!
+
+Terima kasih sudah menggunakan library ini, selamat mencoba >//<

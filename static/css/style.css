@@ -1,0 +1,43 @@
+body {
+  font-family: "Montserrat","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.card .card-text {
+  margin-top: -10px;
+  font-size: 20px;
+}
+
+.card .over {
+  overflow-y: auto;
+  overflow-x: scroll;
+  margin-top: -30px;
+  color: black;
+}
+
+.card td a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #222;
+}
+
+.navbar .navbar-toggler {
+  outline: none;
+  border: none;
+}
+
+.navbar .navbar-brand {
+  color: #1E90FF;
+  font-weight: 500;
+}
+
+.navbar .navbar-brand span {
+  color: #fff;
+}
+
+.text-muted {
+  color: #c5c7cc;
+  text-transform: uppercase;
+}
