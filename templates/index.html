@@ -4,16 +4,16 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          {% for indo in local %}
+          {# for indo in local #}
           <div class="card mb-3">
             <div class="card-body bg-warning">
-              <h1 class="card-title"><span>{{indo.confirmed}}</span></h1>
+              <h1 class="card-title"><span>{{local[0].confirmed}}</span></h1>
               <p class="card-text text-muted">Case Total</p>
             </div>
           </div>
           <div class="card mb-3 bg-primary">
             <div class="card-body">
-              <h1 class="card-title"><span>{{indo.active}}</span></h1>
+              <h1 class="card-title"><span>{{local[0].active}}</span></h1>
               <p class="card-text text-muted">Active Total</p>
             </div>
           </div>
@@ -21,24 +21,31 @@
         <div class="col-sm-6">
           <div class="card mb-3 bg-success">
             <div class="card-body">
-              <h1 class="card-title"><span>{{indo.recovered}}</span></h1>
+              <h1 class="card-title"><span>{{local[0].recovered}}</span></h1>
               <p class="card-text text-muted">Recovered Total</p>
             </div>
           </div>
           <div class="card mb-3 bg-danger">
             <div class="card-body">
-              <h1 class="card-title"><span>{{indo.deaths}}</span></h1>
+              <h1 class="card-title"><span>{{local[0].deaths}}</span></h1>
               <p class="card-text text-muted">Deaths Total</p>
             </div>
           </div>
-          {% endfor %}
+          {# endfor #}
+        </div>
+        <div class="col-sm-12">
+          <div class="card mb-5">
+            <div class="card-body">
+              <canvas id="data-pie" width="600" height="600"></canvas>
+            </div>
+          </div>
         </div>
         <div class="col-sm-12">
           <div class="card mb-3">
             <div class="card-body">
               <h6 class="text-primary">About</h6>
               <hr>
-              <p>This website is useful for viewing the status of corona in Indonesia and globally, made with the Flask and Bootstrap4 Framework, assisted by the API from the Kawalcorona web.</p>
+              <p>This website is useful for viewing the status of corona in Indonesia and globally, made with the Flask and Bootstatusrap4 Framework, assistatused by the API from the Kawalcorona web.</p>
               <i class="fa-2x fab fa-github text-dark mr-1"><a href="https://github.com/anonkyuhuu"></i></a>
               <i class="fa-2x fab fa-facebook text-dark mr-1"><a href="https://github.com/anonkyuhuu"></i></a>
               <i class="fa-2x fab fa-instagram text-dark mr-1"><a href="https://github.com/anonkyuhuu"></i></a>
@@ -78,4 +85,42 @@
         </div>
       </div>
     </div>
+{% endblock %}
+{% block scriptjs %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+  var DataCanvas = document.getElementById("data-pie");
+
+  Chart.defaults.global.defaultFontFamily = "Lato";
+  Chart.defaults.global.defaultFontSize = 18;
+
+  var DataData = {
+      labels: [
+        "confirmed",
+        "active",
+        "recovered",
+        "deaths"
+      ],
+      datasets: [
+          {
+              data: [
+                  {{local[0].confirmed}},
+                  {{local[0].active}},
+                  {{local[0].recovered}},
+                  {{local[0].deaths}}
+              ],
+              backgroundColor: [
+                  "yellow",
+                  "blue",
+                  "green",
+                  "red"
+              ]
+          }]
+  };
+
+  var pieChart = new Chart(DataCanvas, {
+    type: 'pie',
+    data: DataData
+  });
+</script>
 {% endblock %}
