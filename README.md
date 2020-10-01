@@ -1,4 +1,5 @@
 ![SKRINSUT](static/images/screenshot.jpg)
+![SKRINSUT2](static/images/screenshot2.jpg)
 ## Corona Web
 * [Featurs](#featurs)
 * [Installation](#installation)
